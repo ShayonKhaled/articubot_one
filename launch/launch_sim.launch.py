@@ -9,6 +9,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_ros.actions import Node
 
+import xacro
 
 
 def generate_launch_description():
@@ -16,6 +17,7 @@ def generate_launch_description():
 
 
     package_name='humblebot' 
+    file_subpath = 'description/robot.urdf.xacro'
 
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -23,6 +25,17 @@ def generate_launch_description():
                 )]), launch_arguments={'use_sim_time': 'true'}.items()
     )
 
+    xacro_file = os.path.join(get_package_share_directory(package_name),file_subpath)
+    robot_description_raw = xacro.process_file(xacro_file).toxml()
+    
+    node_robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='screen',
+        parameters=[{'robot_description': robot_description_raw,
+        'use_sim_time': True}] # add other parameters here if required
+    )
+    
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),

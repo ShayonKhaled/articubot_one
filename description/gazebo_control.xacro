@@ -4,33 +4,20 @@
         <plugin name='differential_drive_controller' filename='libgazebo_ros_diff_drive.so'>
 
 
-            <!-- Wheel Information -->
+            <left_joint>left_wheel_joint</left_joint>
+            <right_joint>right_wheel_joint</right_joint>
             <wheel_separation>0.185</wheel_separation>
             <wheel_diameter>0.065</wheel_diameter>
 
-
-            <!-- Joints -->
-            <left_joint>left_wheel_joint</left_joint>
-            <right_joint>right_wheel_joint</right_joint>
-
-            <!-- Limits -->
             <wheelTorque>200</wheelTorque>
             <wheelAcceleration>10.0</wheelAcceleration>
-            <torque>5</torque>
 
-            <!-- topics  -->
-            <commandTopic>cmd_vel</commandTopic>
-            <odometryTopic>odom</odometryTopic>
-            <odometrySource>world</odometrySource>    <!-- odometrySource options "world" "encoder" -->
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
 
-            <!-- Frames -->
-            <odometryFrame>odom</odometryFrame>
-            <robotBaseFrame>base_link</robotBaseFrame>
-
-            <!-- outputs -->
-            <publishTf>1</publishTf>
-            <publishOdomTF>true</publishOdomTF>
-            <publishWheelTF>true</publishWheelTF>
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
             <publishWheelJointState>true</publishWheelJointState>
 
         </plugin>
