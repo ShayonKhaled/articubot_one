@@ -23,7 +23,7 @@
             </geometry>
         </collision>
         <xacro:inertial_box mass="0.92" x="0" y="0" z="0.03">
-            <origin xyz="0.15 0 0.075" rpy="0 0 0" />
+            <origin xyz="0 0 0.03" rpy="0 0 0 " />
         </xacro:inertial_box>
     </link>
     <gazebo reference="chassis">
@@ -124,7 +124,7 @@
             <material name="black" />
         </visual>
         <xacro:inertial_sphere mass="0.01" radius="0.008">
-            <origin xyz="-0.08 0 -0.0325" rpy="0 0 0" />
+            <origin xyz="0.08 0 -0.0325" rpy="0 0 0" />
         </xacro:inertial_sphere>
     </link>
     <gazebo reference="back_caster_wheel">
