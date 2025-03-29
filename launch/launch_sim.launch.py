@@ -36,7 +36,7 @@ def generate_launch_description():
         '-entity', 'humblebot',
         '-x', '0',
         '-y', '0',
-        '-z', '0'  
+        '-z', '0.05'  
     ],
     output='screen'
 )
