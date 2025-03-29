@@ -14,8 +14,6 @@ from launch_ros.actions import Node
 def generate_launch_description():
 
 
-    # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
-    # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
 
     package_name='humblebot' 
 
@@ -30,10 +28,19 @@ def generate_launch_description():
                     get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),
              )
 
-    spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
-                        arguments=['-topic', 'robot_description',
-                                   '-entity', 'my_bot'],
-                        output='screen')
+    spawn_entity = Node(
+    package='gazebo_ros',
+    executable='spawn_entity.py',
+    arguments=[
+        '-topic', 'robot_description',
+        '-entity', 'humblebot',
+        '-x', '0',
+        '-y', '0',
+        '-z', '0'  
+    ],
+    output='screen'
+)
+
 
 
 

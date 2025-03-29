@@ -102,8 +102,8 @@
     </link>
     <gazebo reference="front_caster_wheel">
         <material>Gazebo/Black</material>
-        <mu1 value="0.001" />
-        <mu2 value="0.001" />
+        <mu1 value="0" />
+        <mu2 value="0" />
     </gazebo>
 
     <!--back
@@ -123,13 +123,13 @@
             </geometry>
             <material name="black" />
         </visual>
-        <xacro:inertial_sphere mass="0.01" radius="0.008">
+        <xacro:inertial_sphere mass="0.001" radius="0.008">
             <origin xyz="0.08 0 -0.0325" rpy="0 0 0" />
         </xacro:inertial_sphere>
     </link>
     <gazebo reference="back_caster_wheel">
         <material>Gazebo/Black</material>
-        <mu1 value="0.001" />
-        <mu2 value="0.001" />
+        <mu1 value="0" />
+        <mu2 value="0" />
     </gazebo>
 </robot>
