@@ -1,4 +1,4 @@
-#Humblebot
+# Humblebot
 
 This repository documents my journey to learn and work with ROS 2 by building a custom teleoperated differential drive robot. The project runs ROS 2 Humble on Ubuntu MATE 22.04, using a Raspberry Pi 4 to communicate with an onboard microcontroller over serial. The system includes real-time motor control, RPM feedback, and modular ROS 2 nodes for future expansion.
 
